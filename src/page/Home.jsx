@@ -48,14 +48,6 @@ const Btn1 = {
 
 const Home = () => {
 
-  // loader 
-  let [lodding,setLodding] = useState(true)
-  setTimeout(() => {
-    setLodding(false)
-  },1000)
-  if(lodding){
-    return <Loder />
-  }
   return (
     <div>
 

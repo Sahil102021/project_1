@@ -128,7 +128,7 @@ const Navbar = () => {
                     sx={{ textTransform: "capitalize" }}
                     aria-label="Basic button group"
                   >
-                    <Link to="/">
+                    <Link to="/home">
                       <Button variant="small" sx={btn1}>
                         Home
                       </Button>
@@ -147,43 +147,83 @@ const Navbar = () => {
                       className={`${isActive ? "active" : "inactive"}`}
                       sx={{
                         display: isActive ? "flex" : "none",
-                        width: { md: "400px", lg: "600px" },
+                        width: { xs: "100%", md: "400px", lg: "600px" },
                         height: "auto",
                         flexDirection: "row",
-                        gap: "5px",
+                        gap: "20px",
                         position: "absolute",
                         top: "100%",
-                        transition: "opacity 0.5s ease", // Smooth transition
+                        opacity: isActive ? 1 : 0,
+                        visibility: isActive ? "visible" : "hidden",
+                        transition: "opacity 0.5s ease, visibility 0s 0.5s", // Smooth transition
+                        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)", // Soft shadow
+                        borderRadius: "8px", // Rounded corners
+                        padding: "20px", // Inner padding
+                        backgroundColor: "white", // Background color
                       }}
                     >
-                      <ul className="t2">
-                        <Link to="/">
-                          <li>Home</li>
-                        </Link>
-                        <Link to="/Explore">
-                          <li>Explore</li>
-                        </Link>
-                        <Link to="/Blog">
-                          <li>Blog</li>
-                        </Link>
-                        <Link to="/About">
-                          <li>Abour</li>
-                        </Link>
-                      </ul>
-                      <ul className="t2">
-                        <li>Item 1</li>
-                        <li>Item 2</li>
-                        <li>Item 3</li>
-                        <li>Item 4</li>
-                        <li>Item 5</li>
-                      </ul>
-                      <ul className="t2">
-                        <li>Link A</li>
-                        <li>Link B</li>
-                        <li>Link C</li>
-                        <li>Link D</li>
-                        <li>Link E</li>
-                      </ul>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row",
+                          gap: "20px",
+                        }}
+                      >
+                        <ul
+                          className="t2"
+                          style={{ listStyleType: "none", padding: 0 }}
+                        >
+                          <Link to="/home">
+                            <li
+                              sx={{
+                                padding: "12px 20px",
+                                fontSize: "16px",
+                                fontWeight: 500,
+                                color: "#333",
+                                cursor: "pointer",
+                                transition:
+                                  "background-color 0.3s ease, transform 0.3s ease",
+                                borderRadius: "5px",
+                                "&:hover": {
+                                  backgroundColor: "#f0f0f0",
+                                  transform: "scale(1.05)", // Slightly enlarge item on hover
+                                },
+                              }}
+                            >
+                              Home
+                            </li>
+                          </Link>
+                          <Link to="/Explore">
+                            <li>Explore</li>
+                          </Link>
+                          <Link to="/Blog">
+                            <li>Blog</li>
+                          </Link>
+                          <Link to="/About">
+                            <li>About</li>
+                          </Link>
+                        </ul>
+                        <ul
+                          className="t2"
+                          style={{ listStyleType: "none", padding: 0 }}
+                        >
+                          <li>Item 1</li>
+                          <li>Item 2</li>
+                          <li>Item 3</li>
+                          <li>Item 4</li>
+                          <li>Item 5</li>
+                        </ul>
+                        <ul
+                          className="t2"
+                          style={{ listStyleType: "none", padding: 0 }}
+                        >
+                          <li>Link A</li>
+                          <li>Link B</li>
+                          <li>Link C</li>
+                          <li>Link D</li>
+                          <li>Link E</li>
+                        </ul>
+                      </Box>
                     </Box>
 
                     <Link to="/About">
